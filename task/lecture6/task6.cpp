@@ -5,7 +5,7 @@
 using namespace std;
 
 void printPhoneNum(string input_str) {
-  regex rxWithHyphen(R"(^0\d{9,10})");
+  regex rxWithHyphen(R"(0\d{9,10})");
   sregex_iterator withIt(input_str.begin(), input_str.end(), rxWithHyphen);
   sregex_iterator withEnd;
   cout << "入力に含まれていた電話番号: " << endl;
