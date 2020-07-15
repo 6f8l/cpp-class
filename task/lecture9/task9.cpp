@@ -31,8 +31,11 @@ int main() {
   ifstream ifs("students.csv");
 
   string line;
-  Student person;
+  vector<Student> people;
+  int person_i;
+
   while (getline(ifs, line)) {
+    Student person;
     vector<string> strvec = split(line, ',');
 
     for (int i = 0; i < strvec.size(); i++) {
@@ -42,8 +45,14 @@ int main() {
         person.setName(strvec[i]);
 
         // 出力
-        cout << person.getID() << ": " << person.getName() << endl;
+        if (person.getName() != "name" || person.getID() != "id") {
+          people.emplace_back(person);
+        }
       }
     }
+  }
+  for (int i = 0; i < people.size(); i++) {
+    cout << "ID: " << people[i].getID() << ", NAME: " << people[i].getName()
+         << endl;
   }
 }
