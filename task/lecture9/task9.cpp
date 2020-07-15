@@ -32,7 +32,6 @@ int main() {
 
   string line;
   vector<Student> people;
-  int person_i;
 
   while (getline(ifs, line)) {
     Student person;
@@ -52,7 +51,7 @@ int main() {
     }
   }
   for (int i = 0; i < people.size(); i++) {
-    cout << "ID: " << people[i].getID() << ", NAME: " << people[i].getName()
+    cout << "id: " << people[i].getID() << ", name: " << people[i].getName()
          << endl;
   }
 }
